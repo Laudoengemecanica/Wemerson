@@ -1,55 +1,107 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+```bash
+export default function Home() {
+return (
+<div className="min-h-screen bg-gray-50 text-gray-900">
+<header className="max-w-6xl mx-auto flex items-center justify-between p-4">
+<div className="flex items-center gap-2">
+<div className="bg-blue-600 text-white w-10 h-10 flex items-center justify-center font-bold rounded-lg">SE</div>
+<div>
+<h1 className="font-bold">Seu Escritório</h1>
+<p className="text-sm text-gray-500">Serviços de Engenharia</p>
+</div>
+</div>
+<nav className="hidden md:flex gap-6 text-gray-600 font-semibold">
+<a href="#servicos">Serviços</a>
+<a href="#portfolio">Portfólio</a>
+<a href="#contato">Contato</a>
+<a href="mailto:contato@seudominio.com" className="bg-blue-600 text-white px-4 py-2 rounded-lg">Orçamento</a>
+</nav>
+</header>
 
-export default defineConfig({
-  plugins: [react()],
-});
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EngenPro</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
-{
-  "name": "meu-site",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "framer-motion": "^11.0.0",
-    "lucide-react": "^0.368.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.0.0",
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.27",
-    "tailwindcss": "^3.3.3",
-    "vite": "^4.4.5"
-  }
+
+<main className="max-w-6xl mx-auto px-4">
+<section className="grid md:grid-cols-2 gap-8 items-center py-12">
+<div>
+<h2 className="text-3xl font-bold">Projetos e consultoria em engenharia</h2>
+<p className="text-gray-600 mt-4">Projetos HVAC, estruturas metálicas, elétrica, laudos técnicos e ART. Documentação clara para aprovação, fabricação e obra.</p>
+<div className="flex gap-4 mt-6">
+<a href="#contato" className="bg-blue-600 text-white px-4 py-2 rounded-lg">Fale conosco</a>
+<a href="#servicos" className="border border-blue-600 text-blue-600 px-4 py-2 rounded-lg">Ver serviços</a>
+</div>
+</div>
+<div className="bg-white shadow-lg rounded-xl p-6">
+<h3 className="font-bold">Solicite um orçamento</h3>
+<form className="mt-4 space-y-3" action="mailto:contato@seudominio.com" method="POST" encType="text/plain">
+<input className="w-full border rounded-lg p-2" placeholder="Nome" required />
+<input className="w-full border rounded-lg p-2" type="email" placeholder="E-mail" required />
+<textarea className="w-full border rounded-lg p-2" rows="4" placeholder="Mensagem"></textarea>
+<button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-lg">Enviar</button>
+</form>
+</div>
+</section>
+
+
+<section id="servicos" className="py-12">
+<h2 className="text-2xl font-bold mb-6">Serviços</h2>
+<div className="grid md:grid-cols-3 gap-6">
+<div className="bg-white shadow p-4 rounded-lg"><strong>Projetos HVAC</strong><p className="text-gray-600 text-sm mt-2">Dimensionamento, seleção de equipamentos, dutos e documentação.</p></div>
+<div className="bg-white shadow p-4 rounded-lg"><strong>Estruturas Metálicas</strong><p className="text-gray-600 text-sm mt-2">Detalhamento, planos de fabricação e interface com fornecedores.</p></div>
+<div className="bg-white shadow p-4 rounded-lg"><strong>Elétrica e SPDA</strong><p className="text-gray-600 text-sm mt-2">Projetos de baixa tensão, layouts e cálculos conforme normas.</p></div>
+<div className="bg-white shadow p-4 rounded-lg"><strong>Laudos e ART</strong><p className="text-gray-600 text-sm mt-2">Laudos técnicos, perícias e assinatura de ART para obras.</p></div>
+<div className="bg-white shadow p-4 rounded-lg"><strong>Compatibilização</strong><p className="text-gray-600 text-sm mt-2">Coordenação entre disciplinas para evitar interferências.</p></div>
+<div className="bg-white shadow p-4 rounded-lg"><strong>Consultoria Técnica</strong><p className="text-gray-600 text-sm mt-2">Apoio técnico em obra e fabricação.</p></div>
+</div>
+</section>
+
+
+<section id="portfolio" className="py-12">
+<h2 className="text-2xl font-bold mb-6">Portfólio</h2>
+<div className="grid md:grid-cols-3 gap-6">
+<div className="bg-white shadow p-4 rounded-lg"><strong>Projeto A</strong><p className="text-gray-600 text-sm mt-2">Compatibilização HVAC em indústria farmacêutica</p></div>
+<div className="bg-white shadow p-4 rounded-lg"><strong>Projeto B</strong><p className="text-gray-600 text-sm mt-2">Estrutura metálica para galpão</p></div>
+<div className="bg-white shadow p-4 rounded-lg"><strong>Projeto C</strong><p className="text-gray-600 text-sm mt-2">Laudo técnico e ART para equipamento</p></div>
+</div>
+</section>
+
+
+<section id="contato" className="py-12">
+<h2 className="text-2xl font-bold mb-6">Contato</h2>
+<p className="text-gray-600">E-mail: contato@seudominio.com | Tel: (00) 0000-0000</p>
+</section>
+</main>
+
+
+<footer className="bg-gray-100 py-6 text-center text-sm text-gray-500">
+© {new Date().getFullYear()} Seu Escritório — Todos os direitos reservados
+</footer>
+</div>
+)
 }
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
+```
+
+
+```css
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+
+```javascript
+// tailwind.config.js
+module.exports = {
+content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+theme: {
+extend: {},
+},
+plugins: [],
+}
+```
+
+
+```javascript
+// postcss.config.js
+module.exports = {
+plugins: {
 }
